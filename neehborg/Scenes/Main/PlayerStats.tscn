@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/login_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/login_background.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Main/PlayerStats.gd" type="Script" id=3]
+
+[node name="PlayerStats" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+modulate = Color( 0.87451, 0.862745, 0.0941176, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -300.0
+margin_right = 200.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 400, 600 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -200.0
+margin_right = 150.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 300, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0.156863, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0.27451, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.929412, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Player Stats"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 54.0
+margin_right = 300.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 0, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 108.0
+margin_right = 300.0
+margin_bottom = 158.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="NinePatchRect/VBoxContainer/Level"]
+margin_right = 101.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.94902, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.839216, 0.0117647, 0.0117647, 1 )
+custom_colors/font_color_shadow = Color( 0.956863, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Level: "
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer/Level"]
+margin_left = 105.0
+margin_right = 165.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 60, 0 )
+
+[node name="Value" type="Label" parent="NinePatchRect/VBoxContainer/Level"]
+margin_left = 169.0
+margin_right = 238.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.937255, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.027451, 0.0745098, 0.772549, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "XXX"
+align = 2
+valign = 1
