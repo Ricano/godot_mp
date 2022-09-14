@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Main/Stages/HUD.gd" type="Script" id=1]
+[ext_resource path="res://assets/Thin Pencil Handwriting.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 51
+outline_size = 1
+outline_color = Color( 0.501961, 0.00392157, 0.00392157, 1 )
+font_data = ExtResource( 2 )
+
+[node name="HUD" type="Control"]
+margin_left = 8.0
+margin_right = 968.0
+margin_bottom = 1920.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -88.0
+margin_top = -96.0
+margin_right = 65.0
+margin_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthContainer" type="HBoxContainer" parent="PlayerContainer"]
+margin_right = 153.0
+margin_bottom = 97.0
+
+[node name="PlayerHealthStat" type="Label" parent="PlayerContainer/HealthContainer"]
+margin_right = 138.0
+margin_bottom = 97.0
+custom_colors/font_color = Color( 0.501961, 0.00392157, 0.00392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "XXX"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = 448.0
+margin_top = -8.0
+margin_right = 592.0
+margin_bottom = 92.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = 384.0
+margin_top = 1840.0
+margin_right = 536.0
+margin_bottom = 1904.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyContainer" type="VBoxContainer" parent="."]
+modulate = Color( 0.231373, 0.0196078, 0.647059, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -32.0
+margin_right = 322.0
+margin_bottom = 97.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthContainer" type="HBoxContainer" parent="EnemyContainer"]
+margin_right = 354.0
+margin_bottom = 97.0
+
+[node name="EnemyHealthStat" type="Label" parent="EnemyContainer/HealthContainer"]
+margin_right = 138.0
+margin_bottom = 97.0
+custom_colors/font_color = Color( 0.501961, 0.00392157, 0.00392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "XXX"

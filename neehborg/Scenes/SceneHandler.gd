@@ -1,7 +1,6 @@
 extends Node
 
-
-var stage_1 = preload("res://Scenes/Stages/Stage1.tscn")
+var stage_1 = preload("res://Scenes/Main/Stages/Stage1.tscn")
 var login = preload("res://Scenes/Main/LoginScreen.tscn")
 var stats = preload("res://Scenes/Main/PlayerStats.tscn")
 

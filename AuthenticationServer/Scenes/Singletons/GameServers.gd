@@ -31,17 +31,28 @@ func start_server():
 
 
 func _on_peer_connected(game_server_id):
+	GameServers.log_time()
 	print("Game Server" + str(game_server_id) + " CONNECTED")
 	
 	game_servers_dict["GameServer1"] = game_server_id
 	print(game_servers_dict)
 	
 func _on_peer_disconnected(game_server_id):
+	GameServers.log_time()
+	
 	print("Game Server" + str(game_server_id) + " DISCONNECTED")
 	
 
 func distribute_login_token(token, game_server):
-	print("game_servers_dict")
-	print(game_servers_dict)
+	GameServers.log_time()
 	var game_server_peer_id = game_servers_dict[game_server]
 	rpc_id(game_server_peer_id, "receive_login_token", token)
+
+
+func log_time():
+	
+	
+	var dt = OS.get_datetime()
+	var ticks = str(OS. get_ticks_msec())
+	
+	print(dt['year'],"/",dt['month'],"/",dt['day']," ",dt['hour'],":",dt['minute'],":",dt['second'], ":", ticks.right(len(ticks)-3) )

@@ -19,11 +19,12 @@ func connect_to_server():
 	network.connect("connection_succeeded", self, "on_connection_succeeded")
 
 func on_connection_failed():
+	Gateway.log_time()
 	print("Failed to connect")
 	
 func on_connection_succeeded():
+	Gateway.log_time()
 	print("Successfully connected to Game Server")
-	# get_node("../SceneHandler").switch_to("stats")
 	
 
 
@@ -44,11 +45,13 @@ remote func receive_player_stats_from_server(stats):
 
 remote func request_token():
 	var sender = get_tree().get_rpc_sender_id()
+	Gateway.log_time()
 	print("received token request from game server")
 	print("sending token: ", token)
 	rpc_id(sender, "response_token", token)
 	
 remote func return_token_verification_result(result):
+	Gateway.log_time()
 	print("Received token verification result from game_server")
 	if result == true:
 		get_node("../SceneHandler/LoginScreen").queue_free()

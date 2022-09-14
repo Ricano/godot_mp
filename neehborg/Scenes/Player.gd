@@ -56,6 +56,8 @@ func _on_SwipeDetector_swiped(direction):
 	new_shot.global_position = global_position
 	new_shot.velocity += direction
 	new_shot.set_collision_mask_bit(5, true)
+	Gateway.log_time()
+	print("Player is shooting")
 	get_parent().add_child(new_shot)
 
 

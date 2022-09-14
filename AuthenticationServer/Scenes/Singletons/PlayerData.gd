@@ -13,3 +13,11 @@ func _ready():
 	
 	data_file.close()
 	data = json_data.result
+
+
+func save_player_data():
+	
+	var save_file = File.new()
+	save_file.open("res://Data/player_data.json", File.WRITE)
+	save_file.store_line(to_json(data))
+	save_file.close() 
